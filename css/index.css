@@ -1644,10 +1644,7 @@ figure.highlight pre .javascript .function {
 #article-container pre[class*='language-'].line-numbers > code {
   position: relative;
   line-height: 1.6;
-  white-space: inherit;
-  word-wrap: normal;
-  word-break: normal;
-  overflow-wrap: normal;
+  white-space: pre-wrap;
 }
 #article-container pre[class*='language-'].line-numbers .line-numbers-rows {
   position: absolute;
