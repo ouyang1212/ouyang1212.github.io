@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>图片的url获取办法</title>
+      <link href="/2022/05/01/%E5%9B%BE%E7%89%87url/"/>
+      <url>/2022/05/01/%E5%9B%BE%E7%89%87url/</url>
+      
+        <content type="html"><![CDATA[<p>从网上获得了好看的图片，怎么获取url呢</p><p>参考网站<a href="https://www.cnblogs.com/p1ng/p/12880452.html">图片url地址在线生成方法</a></p><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p><img src="/../images/l2LuzVk3PFqv1K8.jpg" alt="image.jpg"></p><p>获得的url地址</p><pre class="line-numbers language-html" data-language="html"><code class="language-html">https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>首先注册网站</p><p>[SMMS官网](<a href="https://sm.ms/">Image Upload - SM.MS - Simple Free Image Hosting</a>)</p><p>注册，登陆上传图片即可</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>20220429日记</title>
       <link href="/2022/04/30/%E6%97%A5%E8%AE%B0/20220429/"/>
       <url>/2022/04/30/%E6%97%A5%E8%AE%B0/20220429/</url>
