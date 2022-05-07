@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数据挖掘第三章复习 | lucky_minx</title><meta name="keywords" content="数据挖掘学习"><meta name="author" content="minx oy"><meta name="copyright" content="minx oy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="分类基本概念分类是利用一个分类模型，吧样本X（属性集）映射到定类别中的一个y $$y&#x3D;f(x)$$ 3.2一般分类框架 训练集：为建立模型而使用得到实例（样本集） 测试集：用于评估分类模型的准确率  分类过程  训练，建立一个模型，把数据带进去 测试，使用模型，对将来的或未知的对象进行分类 评估模型的准确率。测试集独立于训练集    准确率： $$准确率&#x3D;\frac{正确预测}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据挖掘第三章复习">
+<meta property="og:url" content="http://lucky_minx.com/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
+<meta property="og:site_name" content="lucky_minx">
+<meta property="og:description" content="分类基本概念分类是利用一个分类模型，吧样本X（属性集）映射到定类别中的一个y $$y&#x3D;f(x)$$ 3.2一般分类框架 训练集：为建立模型而使用得到实例（样本集） 测试集：用于评估分类模型的准确率  分类过程  训练，建立一个模型，把数据带进去 测试，使用模型，对将来的或未知的对象进行分类 评估模型的准确率。测试集独立于训练集    准确率： $$准确率&#x3D;\frac{正确预测}">
+<meta property="og:locale">
+<meta property="og:image" content="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg">
+<meta property="article:published_time" content="2022-05-07T07:30:55.000Z">
+<meta property="article:modified_time" content="2022-05-07T07:21:49.515Z">
+<meta property="article:author" content="minx oy">
+<meta property="article:tag" content="数据挖掘学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://lucky_minx.com/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%89%E7%AB%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据挖掘第三章复习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-07 15:21:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/diary/"><i class="fa-fw fas fa-book"></i><span> 生活琐碎</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">lucky_minx</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/diary/"><i class="fa-fw fas fa-book"></i><span> 生活琐碎</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据挖掘第三章复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-05-07T07:30:55.000Z" title="Created 2022-05-07 15:30:55">2022-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-05-07T07:21:49.515Z" title="Updated 2022-05-07 15:21:49">2022-05-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据挖掘第三章复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="分类基本概念"><a href="#分类基本概念" class="headerlink" title="分类基本概念"></a>分类基本概念</h2><p>分类是利用一个<strong>分类模型</strong>，吧样本X（属性集）映射到定类别中的一个y</p>
+<p>$$y&#x3D;f(x)$$</p>
+<h2 id="3-2一般分类框架"><a href="#3-2一般分类框架" class="headerlink" title="3.2一般分类框架"></a>3.2一般分类框架</h2><ul>
+<li>训练集：为建立模型而使用得到实例（样本集）</li>
+<li>测试集：用于评估分类模型的准确率</li>
+</ul>
+<p>分类过程</p>
+<ol>
+<li>训练，建立一个模型，把数据带进去</li>
+<li>测试，使用模型，对将来的或未知的对象进行分类<ul>
+<li>评估模型的准确率。测试集独立于训练集</li>
+</ul>
+</li>
+</ol>
+<p>准确率：</p>
+<p>$$准确率&#x3D;\frac{正确预测}{总预测量}$$</p>
+<p>错误率类似</p>
+<h2 id="3-3决策树分类器"><a href="#3-3决策树分类器" class="headerlink" title="3.3决策树分类器"></a>3.3决策树分类器</h2><h3 id="3-3-1-Hunt算法"><a href="#3-3-1-Hunt算法" class="headerlink" title="3.3.1 Hunt算法"></a>3.3.1 Hunt算法</h3><p>设 Dt 是与结点 t相关联的训练记录集（采用<strong>贪心</strong>策略，就是每一步都选最佳划分）<br>算法步骤:</p>
+<ul>
+<li>如果Dt 中所有记录<strong>都属于同一个类</strong> yt, 则t是叶结点，用yt标记</li>
+<li>如果 Dt 中包含属于<strong>多个类</strong>的记录，则选择<strong>一个属性测试条件</strong>，将记录划分成较小的子集。对于测试条件的每个输出，创建一个子结点，并根据测试结果将Dt中的记录分布到子结点中。然后，对于每个子结点，<strong>递归</strong>地调用该算法</li>
+</ul>
+<p>决策树归纳的设计问题</p>
+<ul>
+<li>如何<strong>分裂</strong>训练记录<ul>
+<li>怎样为不同类型的属性指定测试条件?</li>
+<li>怎样评估每种测试条件?</li>
+</ul>
+</li>
+<li>如何<strong>停止分裂</strong>过程</li>
+</ul>
+<h3 id="3-3-2-怎样为不同类型的属性指定测试条件"><a href="#3-3-2-怎样为不同类型的属性指定测试条件" class="headerlink" title="3.3.2 怎样为不同类型的属性指定测试条件?"></a>3.3.2 怎样为不同类型的属性指定测试条件?</h3><ul>
+<li>依赖于属性的类型<br>标称：二路，两个，但要划分很多次；多路，取决于不同属性值的个数<br>序数：二路，保持有序性；多路，不同属性个数<br>连续：二路，考虑所有划分点，选一个最佳$A&lt;v或A\leq v$；多路$v_i\leq A &lt;v_{i+1}$</li>
+<li>依赖于划分的路数<br>2路划分<br>多路划分</li>
+</ul>
+<h3 id="3-3-3-怎样选择最佳划分？"><a href="#3-3-3-怎样选择最佳划分？" class="headerlink" title="3.3.3 怎样选择最佳划分？"></a>3.3.3 怎样选择最佳划分？</h3><p>选择最佳划分的度量通常是根据划分后子结点不纯性的程度。<strong>不纯性</strong>的程度越低，类分布就越倾斜</p>
+<p><img src="F:/博客/floder/source/images/image-20220506094759576.png" alt="image-20220506094759576"></p>
+<p>一般选择的是<strong>基尼指数</strong>，方便计算</p>
+<p><img src="F:/博客/floder/source/images/image-20220506094856905.png" alt="image-20220506094856905"></p>
+<h4 id="子节点的集合不纯度"><a href="#子节点的集合不纯度" class="headerlink" title="子节点的集合不纯度"></a>子节点的集合不纯度</h4><p><img src="F:/博客/floder/source/images/image-20220506095237943.png" alt="image-20220506095237943"></p>
+<p>一个例子：</p>
+<p><img src="F:/博客/floder/source/images/image-20220506095350193.png" alt="image-20220506095350193"></p>
+<h4 id="标称和有序属性"><a href="#标称和有序属性" class="headerlink" title="标称和有序属性"></a>标称和有序属性</h4><p>和例子的计算方式差不多</p>
+<h4 id="连续属性"><a href="#连续属性" class="headerlink" title="连续属性"></a>连续属性</h4><p><img src="F:/博客/floder/source/images/image-20220506095536044.png" alt="image-20220506095536044"></p>
+<p>就相当于是排序后，不断尝试中间的点，计算基尼</p>
+<h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p><img src="F:/博客/floder/source/images/image-20220506100255037.png" alt="image-20220506100255037"></p>
+<h4 id="纯度增益-x2F-信息增益"><a href="#纯度增益-x2F-信息增益" class="headerlink" title="纯度增益&#x2F;信息增益"></a>纯度增益&#x2F;信息增益</h4><p><img src="F:/博客/floder/source/images/image-20220506100514768.png" alt="image-20220506100514768"></p>
+<p>其实父节点都一样，主要还是看子节点的不纯度</p>
+<p>不纯性度量的缺陷</p>
+<ul>
+<li>不纯性度量趋向于有利于具有大量不同值的属性<br>如：利用ID产生更纯的划分，但它却毫无用处</li>
+</ul>
+<p><img src="F:/博客/floder/source/images/image-20220506100827320.png" alt="image-20220506100827320"></p>
+<p>Entropy(p)是父节点p的熵，I是不纯度度量的其中一种</p>
+<h4 id="如何停止分裂过程"><a href="#如何停止分裂过程" class="headerlink" title="如何停止分裂过程"></a>如何停止分裂过程</h4><ul>
+<li>当一个节点所有样本属于同一类时，停止分裂</li>
+<li>当一个节点所有样本都有相同的属性时，停止分裂</li>
+<li>提前终止树的生长</li>
+</ul>
+<h3 id="决策树的特点"><a href="#决策树的特点" class="headerlink" title="决策树的特点"></a>决策树的特点</h3><p>特点:</p>
+<ul>
+<li>决策树是一种构建分类模型的非参数方法</li>
+<li><strong>不需要昂贵</strong>的的计算代价</li>
+<li>决策树相对容易解释</li>
+<li>决策树是学习<strong>离散值函数</strong>的<strong>典型代表</strong></li>
+<li>决策数对于<strong>噪声的干扰</strong>具有相当好的鲁棒性</li>
+<li>冗余属性不会对决策树的准确率造成不利影响</li>
+<li>数据碎片问题。随着数的生长，可能导致叶结点记录数太少，对于叶结点代表的类，不能做出</li>
+<li>具有统计意义的判决</li>
+<li>子树可能在决策树中重复多次。使决策树过于复杂</li>
+</ul>
+<h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><h3 id="过拟合与欠拟合"><a href="#过拟合与欠拟合" class="headerlink" title="过拟合与欠拟合"></a>过拟合与欠拟合</h3><ul>
+<li>欠拟合：模型<strong>不能很好地适应</strong>训练集</li>
+<li>过拟合：模型学习了训练数据中的<strong>细节和噪音</strong>，很好的拟合了训练集，但在<strong>新的数据</strong>上表现很差</li>
+</ul>
+<p>分类模型的误差大致分为三种：</p>
+<ul>
+<li>训练误差：是在训练集上的误差</li>
+<li>测试误差：是在测试集上的误差</li>
+<li>泛化误差：是模型在未知记录上的期望误差</li>
+</ul>
+<p>一个<strong>好的</strong>分类模型必须具有<strong>低训练误差</strong>和<strong>低泛化误差</strong>。</p>
+<p>过拟合产生的原因</p>
+<ul>
+<li>有限的训练规模</li>
+<li>过高的模型复杂度</li>
+</ul>
+<p>所以说<strong>训练集不能太小，模型不能太复杂</strong></p>
+<p>多重比较，就是多跑几次取平均值</p>
+<p>训练错误率不能可靠的作为模型选择的唯一标准</p>
+<ul>
+<li>验证集</li>
+<li>模型复杂度</li>
+</ul>
+<p>使用验证集和模型复杂度来帮助评估模型</p>
+<p>将训练数据分为两个部分：</p>
+<ul>
+<li>训练集：用于构建模型</li>
+<li>验证集：用于估计泛化误差（验证集不同于测试集）<ul>
+<li>缺点：用于训练的数据变少</li>
+</ul>
+</li>
+</ul>
+<p><strong>奥卡姆剃刀</strong>(Occam’s Razor):给定两个具有相同泛化误差的模型，较简单的模型优于复杂的模型</p>
+<h4 id="悲观误差评估"><a href="#悲观误差评估" class="headerlink" title="悲观误差评估"></a>悲观误差评估</h4><p><img src="F:/博客/floder/source/images/image-20220506102205237.png" alt="image-20220506102205237"></p>
+<p><img src="F:/博客/floder/source/images/image-20220506102336139.png" alt="image-20220506102336139"></p>
+<h4 id="最小描述长度-MDL"><a href="#最小描述长度-MDL" class="headerlink" title="最小描述长度 (MDL)"></a>最小描述长度 (MDL)</h4><p>预剪枝（Pre-pruning，早停规则）</p>
+<ul>
+<li><p>树生长算法在产生完全拟合整个训练数据集的之前就停止决策树的生长</p>
+<ul>
+<li>树深度、叶子结点数限制</li>
+<li>当结点的记录数少于一定阈值，则停止生长</li>
+<li>当不纯性度量的增益低于某个阈值时，则停止生长</li>
+</ul>
+</li>
+<li><ul>
+<li>缺点：很难为提前终止选取正确的阈值:<br>阈值太高，导致欠拟合<br>阈值太低，导致不能充分解决过拟合的问题。</li>
+</ul>
+</li>
+</ul>
+<p>后剪枝（Post-pruning）</p>
+<ul>
+<li>初始决策树按照最大规模生长，然后进行剪枝的步骤，按照自底向上的方式修剪完全增长的决策树。</li>
+<li>剪枝有两种做法:<ul>
+<li>子树提升：用子树中最常用的分支代替子树</li>
+<li>子树替换：用新的叶结点替换子树，该叶结点的类标号由子树下记录中的多数类确定</li>
+</ul>
+</li>
+</ul>
+<p>与预剪枝相比，后剪枝技术倾向于产生更好的结果。<br>因为不像先剪枝，后剪枝是根据完全增长的决策树作出的剪枝决策，先剪枝则可能过早终止决策树的生长。</p>
+<h3 id="模型评估-1"><a href="#模型评估-1" class="headerlink" title="模型评估"></a>模型评估</h3><p>目标：评估模型的泛化性能</p>
+<ul>
+<li>保持方法（Holdout ）</li>
+<li>将数据集划分为两个集合：训练集和测试集<ul>
+<li>训练集（train set）用于构建模型</li>
+<li>测试集（test set）用于评估模型的泛化误差</li>
+</ul>
+</li>
+<li>交叉验证（Cross validation）</li>
+</ul>
+<p><img src="F:/博客/floder/source/images/image-20220506104210777.png" alt="image-20220506104210777"></p>
+<p>主要是留一法和k折交叉验证</p>
+<h4 id="超参数的概念"><a href="#超参数的概念" class="headerlink" title="超参数的概念"></a>超参数的概念</h4><p>超参数：<strong>学习模型进行学习前需要确定的参数</strong></p>
+<ul>
+<li>如不纯性度量方法，预剪枝的最大叶子结点数、最大树深度、不纯性度量的增益阈值</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://lucky_minx.com">minx oy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://lucky_minx.com/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%89%E7%AB%A0/">http://lucky_minx.com/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%89%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AD%A6%E4%B9%A0/">数据挖掘学习</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%83%E7%AB%A0/"><img class="prev-cover" src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">数据挖掘第七章复习</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"><img class="next-cover" src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">数据挖掘第二章复习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%94%E7%AB%A0/" title="数据挖掘第五章复习"><img class="cover" src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-07</div><div class="title">数据挖掘第五章复习</div></div></a></div><div><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%83%E7%AB%A0/" title="数据挖掘第七章复习"><img class="cover" src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-07</div><div class="title">数据挖掘第七章复习</div></div></a></div><div><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="数据挖掘第二章复习"><img class="cover" src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-07</div><div class="title">数据挖掘第二章复习</div></div></a></div><div><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E5%9B%9B%E7%AB%A02/" title="数据挖掘第四章复习2"><img class="cover" src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-07</div><div class="title">数据挖掘第四章复习2</div></div></a></div><div><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E5%9B%9B%E7%AB%A01/" title="数据挖掘第四章复习1"><img class="cover" src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-07</div><div class="title">数据挖掘第四章复习1</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">minx oy</div><div class="author-info__description">太阳的守护神</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ouyang1212" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:HFUT_oymx@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">分类基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E4%B8%80%E8%88%AC%E5%88%86%E7%B1%BB%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">3.2一般分类框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E5%86%B3%E7%AD%96%E6%A0%91%E5%88%86%E7%B1%BB%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">3.3决策树分类器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-Hunt%E7%AE%97%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">3.3.1 Hunt算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-%E6%80%8E%E6%A0%B7%E4%B8%BA%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8C%87%E5%AE%9A%E6%B5%8B%E8%AF%95%E6%9D%A1%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">3.3.2 怎样为不同类型的属性指定测试条件?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-%E6%80%8E%E6%A0%B7%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E5%88%92%E5%88%86%EF%BC%9F"><span class="toc-number">3.3.</span> <span class="toc-text">3.3.3 怎样选择最佳划分？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E9%9B%86%E5%90%88%E4%B8%8D%E7%BA%AF%E5%BA%A6"><span class="toc-number">3.3.1.</span> <span class="toc-text">子节点的集合不纯度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%A7%B0%E5%92%8C%E6%9C%89%E5%BA%8F%E5%B1%9E%E6%80%A7"><span class="toc-number">3.3.2.</span> <span class="toc-text">标称和有序属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%B1%9E%E6%80%A7"><span class="toc-number">3.3.3.</span> <span class="toc-text">连续属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%86%B5"><span class="toc-number">3.3.4.</span> <span class="toc-text">信息熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%AF%E5%BA%A6%E5%A2%9E%E7%9B%8A-x2F-%E4%BF%A1%E6%81%AF%E5%A2%9E%E7%9B%8A"><span class="toc-number">3.3.5.</span> <span class="toc-text">纯度增益&#x2F;信息增益</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%81%9C%E6%AD%A2%E5%88%86%E8%A3%82%E8%BF%87%E7%A8%8B"><span class="toc-number">3.3.6.</span> <span class="toc-text">如何停止分裂过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">3.4.</span> <span class="toc-text">决策树的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="toc-number">4.</span> <span class="toc-text">模型评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%E4%B8%8E%E6%AC%A0%E6%8B%9F%E5%90%88"><span class="toc-number">4.1.</span> <span class="toc-text">过拟合与欠拟合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%82%B2%E8%A7%82%E8%AF%AF%E5%B7%AE%E8%AF%84%E4%BC%B0"><span class="toc-number">4.1.1.</span> <span class="toc-text">悲观误差评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E6%8F%8F%E8%BF%B0%E9%95%BF%E5%BA%A6-MDL"><span class="toc-number">4.1.2.</span> <span class="toc-text">最小描述长度 (MDL)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0-1"><span class="toc-number">4.2.</span> <span class="toc-text">模型评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">4.2.1.</span> <span class="toc-text">超参数的概念</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%94%E7%AB%A0/" title="数据挖掘第五章复习"><img src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据挖掘第五章复习"/></a><div class="content"><a class="title" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%94%E7%AB%A0/" title="数据挖掘第五章复习">数据挖掘第五章复习</a><time datetime="2022-05-07T07:30:55.000Z" title="Created 2022-05-07 15:30:55">2022-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%83%E7%AB%A0/" title="数据挖掘第七章复习"><img src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据挖掘第七章复习"/></a><div class="content"><a class="title" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%83%E7%AB%A0/" title="数据挖掘第七章复习">数据挖掘第七章复习</a><time datetime="2022-05-07T07:30:55.000Z" title="Created 2022-05-07 15:30:55">2022-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%89%E7%AB%A0/" title="数据挖掘第三章复习"><img src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据挖掘第三章复习"/></a><div class="content"><a class="title" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%89%E7%AB%A0/" title="数据挖掘第三章复习">数据挖掘第三章复习</a><time datetime="2022-05-07T07:30:55.000Z" title="Created 2022-05-07 15:30:55">2022-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="数据挖掘第二章复习"><img src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据挖掘第二章复习"/></a><div class="content"><a class="title" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="数据挖掘第二章复习">数据挖掘第二章复习</a><time datetime="2022-05-07T07:30:55.000Z" title="Created 2022-05-07 15:30:55">2022-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E5%9B%9B%E7%AB%A02/" title="数据挖掘第四章复习2"><img src="https://s2.loli.net/2022/05/01/l2LuzVk3PFqv1K8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据挖掘第四章复习2"/></a><div class="content"><a class="title" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E5%9B%9B%E7%AB%A02/" title="数据挖掘第四章复习2">数据挖掘第四章复习2</a><time datetime="2022-05-07T07:30:55.000Z" title="Created 2022-05-07 15:30:55">2022-05-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By minx oy</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Local search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://lucky_minx.com/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%B8%89%E7%AB%A0/'
+    this.page.identifier = '2022/05/07/数据挖掘/第三章/'
+    this.page.title = '数据挖掘第三章复习'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
