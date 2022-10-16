@@ -4,11 +4,156 @@
   
     
     <entry>
+      <title>cs231n&amp;lecture4</title>
+      <link href="/2022/10/14/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/cs231n&amp;lecture4/"/>
+      <url>/2022/10/14/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/cs231n&amp;lecture4/</url>
+      
+        <content type="html"><![CDATA[<p>参考来源：</p><p><a href="http://cs231n.stanford.edu/slides/2017/">Index of &#x2F;slides&#x2F;2017 (stanford.edu)</a></p><p><a href="https://www.bilibili.com/video/BV1nJ411z7fe?p=8&spm_id_from=pageDriver&vd_source=6eec2f14c9cf0fcea00a0d29ba245c79">【08】4 介绍神经网络-反向传播_哔哩哔哩_bilibili</a></p><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>反向传播原理：</p><p><img src="/../../images/image-20221015144133922.png" alt="image-20221015144133922"></p><p>假设当前已知x，y，z的值，前向传播算出f的值，（中间所有计算的结果都要记录着），以便算出对应的梯度值，然后再从后往前传播回去。</p><p>更复杂的一个例子：sigmod函数的反向传播</p><p><img src="/../../images/image-20221015152139006.png" alt="image-20221015152139006"></p><p><img src="/../../images/image-20221015152706973.png" alt="image-20221015152706973"></p><p><img src="/../../images/image-20221015152719342.png" alt="image-20221015152719342"></p><p>或者可以直接利用sigmod函数求导。反正就是利用计算图 </p><ul><li>max函数的反向传播</li></ul><p><img src="/../../images/image-20221015152937023.png" alt="image-20221015152937023"></p><p>只看z和w，取最大的就反向传播，因为只有最大值能影响到最后的值</p><h3 id="矩阵和向量情况下"><a href="#矩阵和向量情况下" class="headerlink" title="矩阵和向量情况下"></a>矩阵和向量情况下</h3><p><img src="/../../images/image-20221015155404795.png" alt="image-20221015155404795"></p><p><img src="/../../images/image-20221015155415537.png" alt="image-20221015155415537"></p><p> 主要有两个难点：</p><ul><li>一个是f对q的偏导数，这个展开了然后对q1，q2求导即可</li><li>另一个是q对$W_{i,j}$的偏导数，显然展开以后（以第一行第一个为例，i&#x3D;1,j&#x3D;1），对其求导只剩下x1，然后对应了第一行，所以结果就是q1对w11求导结果是x1，以此类推。</li></ul><p>最后得到结果：矩阵求导</p><p><img src="/../../images/image-20221015160852963.png" alt="image-20221015160852963"></p><h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+          <category> cs231n </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> cs231n </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cs231n&amp;lecture3</title>
+      <link href="/2022/10/14/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/cs231n&amp;lecture3/"/>
+      <url>/2022/10/14/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/cs231n&amp;lecture3/</url>
+      
+        <content type="html"><![CDATA[<p>参考来源：</p><p><a href="http://cs231n.stanford.edu/slides/2017/">Index of &#x2F;slides&#x2F;2017 (stanford.edu)</a></p><p><a href="https://www.bilibili.com/video/BV1nJ411z7fe?p=7&vd_source=6eec2f14c9cf0fcea00a0d29ba245c79">【07】3 损失函数和优化介绍_哔哩哔哩_bilibili</a></p><h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p><img src="/../../images/image-20221015095841652.png" alt="image-20221015095841652"></p><p>由于多分类问题存在一定的分类不确定性，因此我们需要定义一个损失函数，对我们的训练数据做出的模型进行评估。</p><p>最小化损失函数（优化）</p><h3 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h3><p>对于一个三分类问题，定义一个损失函数</p><p><img src="/../../images/image-20221015100450961.png" alt="image-20221015100450961"></p><p>其中hinge loss（<a href="https://blog.csdn.net/hustqb/article/details/78347713">(40条消息) Hinge loss_hustqb的博客-CSDN博客_hinge_loss</a>）是一个损失函数，常用于svm。主要意思就是，把大于真实标签的分数的值与真实的值相减得到误差（小于就不算了，所以是0；1是阈值，可以调整）</p><p>最终的损失函数<img src="/../../images/image-20221015100506854.png" alt="image-20221015100506854"></p><p>第一个例子的损失</p><p><img src="/../../images/image-20221015101259894.png" alt="image-20221015101259894"></p><p>第三个例子的损失</p><p><img src="/../../images/image-20221015101249551.png" alt="image-20221015101249551"></p><p>最后的总误差，全部加起来求平均</p><p><img src="/../../images/image-20221015101409808.png" alt="image-20221015101409808"></p><h3 id="避免过拟合"><a href="#避免过拟合" class="headerlink" title="避免过拟合"></a>避免过拟合</h3><p><img src="/../../images/image-20221015103522987.png" alt="image-20221015103522987"></p><p>引入一个正则化项，类似于<strong>奥卡姆剃刀原则</strong>，当训练的误差类似时，选择模型简单的。正则化项选择</p><p><img src="/../../images/image-20221015104434203.png" alt="image-20221015104434203"></p><p>一个例子：</p><p><img src="/../../images/image-20221015104521403.png" alt="image-20221015104521403"></p><p>不过事实上，L1是w2更大de （更复杂），就是体现出模型的复杂性</p><h2 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h2><p><img src="/../../images/image-20221015105402451.png" alt="image-20221015105402451"></p><ul><li>首先把每一类的分数对数归一化（softmax函数）</li><li>$L_i$的意思大概要最大化P这个概率相当于最小化Li，Li定义为损失函数</li></ul><p>一个例子：</p><p><img src="/../../images/image-20221015111239934.png" alt="image-20221015111239934"></p><p>以此定义损失函数计算出来的值。</p><p>问题：这个损失函数的最小值和最大值是多少。</p><p>A：0-正无穷。分类的越准确，概率月接近1，因此log后就是0</p><p>回顾一下：不同的损失函数</p><p><img src="/../../images/image-20221015112005616.png" alt="image-20221015112005616"></p><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p> 核心就是利用梯度不断接近最优解（局部最优解）</p><p>反正大概意思就是，找到最优的W。可以利用函数的性质，得到在某一点W时候的梯度，然后一直更新W得到最优W。</p><p>两个超参数：学习率（LR learning rate），batch（选一部分数据来更新）（随机梯度下降）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+          <category> cs231n </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> cs231n </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cs231n&amp;lecture4</title>
+      <link href="/2022/10/14/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/cs231n&amp;lecture5/"/>
+      <url>/2022/10/14/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/cs231n&amp;lecture5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h2><p><img src="/../../images/image-20221015224228548.png" alt="image-20221015224228548"></p><p>首先输入一张图片，是3，32,32的大小，引入一个卷积核filter，5,5,3，不停滑动，然后就得到了一个下一层。取多个filter那么就得到更多层（如果我们有6个filter，下一层就是28,28,6的大小）</p><p><img src="/../../images/image-20221015224419248.png" alt="image-20221015224419248"></p><p>中间加入激活函数，然后类似于神经网络一层一层，就有</p><p><img src="/../../images/image-20221015224606895.png" alt="image-20221015224606895"></p><h3 id="实际工作流程"><a href="#实际工作流程" class="headerlink" title="实际工作流程"></a>实际工作流程</h3><ul><li><p>卷积核：前面解释过了，卷积核的深度&#x3D;前一层卷积层的深度，比如一开始是3，然后是6，然后是10（上面的例子）</p></li><li><p>步长：卷积核每次移动的幅度，如1,2，3</p></li></ul><p><img src="/../../images/image-20221016082952691.png" alt="image-20221016082952691"></p><p>有一个公式（N-F）&#x2F;步长+1&#x3D;输出</p><ul><li>padding：在外面补充0，然后再进行卷积，相应的公式也会发生变化（N增加了2）</li></ul><p><img src="/../../images/image-20221016083313036.png" alt="image-20221016083313036"></p><p>注：也有其他的边缘处理，为了更好的处理边缘的特征</p><p>一个练习：</p><p><img src="/../../images/image-20221016084120375.png" alt="image-20221016084120375"></p><p>也输出：（32+2*2-5）&#x2F;1+1&#x3D;32，输出32，32,10（深度）</p><p>Q：参数有多少个？</p><p>A：5，5，3,（深度）&#x3D;75，还有一个偏差项1，所以一个filter有76，有10个所以有760个</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+          <category> cs231n </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> cs231n </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>李沐第二章</title>
+      <link href="/2022/10/12/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E6%B2%90%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E6%B2%90%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%AF%85/"/>
+      <url>/2022/10/12/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E6%B2%90%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E6%B2%90%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%AF%85/</url>
+      
+        <content type="html"><![CDATA[<p>参考来源：<a href="https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html">2.3. 线性代数 — 动手学深度学习 2.0.0-beta1 documentation (d2l.ai)</a></p><h2 id="2-3线性代数"><a href="#2-3线性代数" class="headerlink" title="2.3线性代数"></a>2.3线性代数</h2><h3 id="2-3-4-张量"><a href="#2-3-4-张量" class="headerlink" title="2.3.4 张量"></a>2.3.4 张量</h3><p>例如，向量是一阶张量，矩阵是二阶张量。</p><h3 id="2-3-5降维"><a href="#2-3-5降维" class="headerlink" title="2.3.5降维"></a>2.3.5降维</h3><p>就是把相应的轴相加起来</p><h3 id="2-3-10-范数"><a href="#2-3-10-范数" class="headerlink" title="2.3.10 范数"></a>2.3.10 范数</h3><p>反正就是返回一个值</p><h2 id="2-4-微积分"><a href="#2-4-微积分" class="headerlink" title="2.4 微积分"></a>2.4 微积分</h2><h3 id="2-4-3-梯度"><a href="#2-4-3-梯度" class="headerlink" title="2.4.3 梯度"></a>2.4.3 梯度</h3><p><img src="/../../../images/image-20221013095052042.png" alt="image-20221013095052042"></p><h3 id="2-4-4-链式法则"><a href="#2-4-4-链式法则" class="headerlink" title="2.4.4 链式法则"></a>2.4.4 链式法则</h3><p><img src="/../../../images/image-20221013095218856.png" alt="image-20221013095218856"></p><h2 id="2-5-自动微分"><a href="#2-5-自动微分" class="headerlink" title="2.5 自动微分"></a>2.5 自动微分</h2><p>深度学习框架通过自动计算导数，即<em>自动微分</em>（automatic differentiation）来加快求导。</p><h3 id="2-5-1一个简单的例子"><a href="#2-5-1一个简单的例子" class="headerlink" title="2.5.1一个简单的例子"></a>2.5.1一个简单的例子</h3><p><img src="/../../../images/image-20221013100413648.png" alt="image-20221013100413648"></p><p>这个还比较简单，就是在已知值得时候，用grad就是对应值得梯度</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+          <category> 李沐 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 李沐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>李沐第三章</title>
+      <link href="/2022/10/12/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E6%B2%90%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E6%B2%90%E7%AC%AC%E4%B8%89%E7%AB%A0/"/>
+      <url>/2022/10/12/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E6%B2%90%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E6%B2%90%E7%AC%AC%E4%B8%89%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<p>参考来源：<a href="https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression.html">3.1. 线性回归 — 动手学深度学习 2.0.0-beta1 documentation (d2l.ai)</a></p><h2 id="3-1-线性回归"><a href="#3-1-线性回归" class="headerlink" title="3.1 线性回归"></a>3.1 线性回归</h2><p><img src="/../../../images/image-20221013101800001.png" alt="image-20221013101800001"></p><h2 id="3-4-softmax运算"><a href="#3-4-softmax运算" class="headerlink" title="3.4 softmax运算"></a>3.4 softmax运算</h2><p><img src="/../../../images/image-20221013111454560.png" alt="image-20221013111454560"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+          <category> 李沐 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 李沐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>20221011日记</title>
       <link href="/2022/10/11/%E6%97%A5%E8%AE%B0/20221011%E6%97%A5%E8%AE%B0/"/>
       <url>/2022/10/11/%E6%97%A5%E8%AE%B0/20221011%E6%97%A5%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="你怎么能偷看人家日记呢！！" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="11d15f6f820de1b434e88784416781372cd9bbcf9f493e17acf4d7a5bc67d32c">19f5612b4aec4e64cf47f8017ba48570be1a3155829c0a2b9746aee7dc843b5dd03b3d58780605875a45e9c053b881238ad223b03db58ef949aafbdfda2b8a67582c868fbe4e5aa1271c7f5b1a09c8fa75673080f4a3127cd8e8d589186f861171abd26440ea6f59199e1574ec3c80d62844eda41f742cff9ae555b7fde7902537f5f384e3c496e0e4a0bf7c5261eff66fb124b4b8ababc6005ca6a8cd3c7695b6f37481999bc6a6a35597756d9b6734f272225e738084b95ff1ece16bc5c673c331b4f9ca6797ee4c49571caecb20f5817ea50f4939eae68f416a436acae349bcd039f232319c9134d8edb3c1743f604707c049a043c0f82c9f916628aaa3c24e30974dc6873b6e15e848407bafbf17594f0d8266d64631a51a2932c9677e901f43e52d987e073057458da8afb37d97a2f8c1da448f71d7aad88e2480356597f374f52c11059c597bcef1149c70f8f18b5c99871fb8451df81af8018d2bc9861448fd6944e3b08cbb1302690cac7fb82fff40d412ecefda4e3a831b02d94f164feb82a9f0ac544a6902af3a13ce2f4e9843777d400efb7e5c1cfb476b3039c7d77f2f52b8c84db405b26b065d5dc2395207d937a28388af7dc085d7f248d1765dcdc23c7ad7f3a3f007d845687d1563a2d8716af2969b99f07a8e15d33d41511f3e7b39309d15303b8bfcab4777c46826ca643961eaaf3790e0c88f51eb5686737d332d1e7f00299017f668a9bf600408b06e1569509f187e8f17cad0862ea24224bb928dcaca51809e45d9808ce1b7f3cb1d54f0250e3971e0750762c1f9e84c4ce46e0db62aef82ded3b81edb7ba89bd8a48cf35c1ffdd4b942c3d3fc5d12c66507fb26c0ee7ed0ffe35aec9ab5908a1219ed9560f4636dc99b39f51ed4f9a003b1a199de1b54157acfb6bc3f7360d01111432e4cd240812d1e469c58042f0bfef170fab12dcad79f8cb2e5abab842dc6187232a931c61b6fc6e5973f7f80557b175b26df71565cd0803d2cfbfe7f823b221301cd4fd264639b2e9979f8a1d6bff8ded2c80f367f01e92dc65295e3a195979ad1c43ecab8c82bc1f48bb4a8c98b666f0309a9db3b4f80215327f69cf8e4c84f5b8197e0d9031ede13ffae6aa5f9c1ba78cc3daef2fe8e322584ff0d43a55cd080187e3f9354266e5e99caf9e55c00ed6adf49f7b07b57a57f95c6667789848e185df2d6dc1062aae5caaf6a16ecd6a97585956602f5f0d48adf2919161bd063814c978ae5a64784904e7519f37a632084f769ae883ffb47c4ecf01568d5d2f5cabe2854c5bbd873f3700513bd71d0b650ed304b87e49233fb70275c0a010e3793347267016328bcda38534fba718b26ba62c117bf02b86d25318844e6cd7c98784bb96a059a45acec17cdff025dfdaaed293707b26b487818a3ae64f78e067d75d9e20b9709d3bda2ad4fdfa64c05618dd369f6b9dc5046789774b0d6feeef91d1471bf7b2f1bdd938aef07dcb4825d6f75eb0b144654d5a2304f5ecf49737b974d8e5c5986eb17004413173e7bb1de66efa30c5acd1b2a2c53ca5e69813f5c604864fde3613cf25be5292ef4d64488865bd5926e48fd0caab92cb6fad5673851de0f049a4d5684fc1504f799bae9bc10a0fe4b5c61875f9e04ee7fa1d5517c7fdeb11f71dffc06e2de921551c18f8c2bf37ed5eff57fc1991150535b07b2510ad8f4e23777ac5044f98e83af47afebf8b2dd4347dc0eb49a0eeca8e9de2daa18ad1e5674d66dadcb2bc5dea430135c74202b75580369bf9904b182c3c8143a75a010f0d62a9e447e45be6a129a5c5f6ada438ed72f2598af4086fc1096fb9a27b178fc539a4744bcb5a8f8d735a9d14569ac5c58c171a0dc07b7a0a2eea8fd19ced870949c1bc4e1306933d5f9eb9deef33bed4a1e9052bd044948588ba87a8f96621c140817c439b5a4f751d4f68f755bdb380e0fef357cdd8b0df9123d6c0856f559ace58a0bdd2c761beb006797e9ed8f09887e9ffae94d43ca744e984e61be985cbfcf3ded0bf41fce644013431dd092e0c884fa6f0dcbfaf854d919416964e020d45d4f92a2448d6b445ca3efdbd7bd3ad39a2c9ed3bdad8724b7bc3915047c89eabd18096bd5e0527ff27eb81cf6ad603dc55099448563ad3c6df1415f4ebd080f373a7bbc6bb8f457a786060bdf274bb8fc6ceede65fce7b3c191d36afec0e44c4a6a3792a5996d33ea575e5549d538377d5410917c3dc0146d970af5dd4929ce8083ebed566b884ff9b58a8a0d6a38e90f7721d6036627edd9671372e7450791a26c35e7279cf3c1fa7e19b7075c8a016f1841398eef07fc31c76b22839b1097564af428fdba91ca5551a96770796ee2cfbb8351fe47958bf9814b6151c692ed27c2b401d69068ab0585f773a3d484ceb949f102be602074449f94eb92eb89e461ea46d5571ac9c9ebced2ba1987bc8feb318208555e1cb3eaf07c0120131b101a327f5168d63a423a46ccddf995c3b46241c27a1a1fbf88b113de0b185f1145128d869a8524f864dafb7fdf537e7852ad9b7b7ccbcb056e03418d36b891662afd65a94f125db863485f66d8ffb63d9fc50df8c01296b15caa7bc6ceea3750be981bd3e8b6c031ebd277889227732bd546edfa9ba91cc7bc4464f0cfae954c1e6ec426a482e33dc0a48415fc3457bb44e0ddc6e43d81be527ace2e89d686be0accce1b0361bc5f51cea2d3cd20b7a3c94b79875822784005a0da2dc61b2f90e4428ed88d9580d9be0bc69400e06c07891b0770cd3fb9ff32d959415295a8a62975147a9951d675159b121b38cd0607a2924c0b30b5750fd81314da7d0f880c22b19bf116574f306d82e2a5b0461a3d9d02442dea585d156e6045f373ab0f797304072bf47cd7794dadb07fca39e6f2da6e3f20791c4f268e1537443f8ef49a2ee66db9dd1143d55926bfc7ff7377516e93286ed0fb2c69b1ee3db38665aa8ad509b10eb4d688c5ed7281c7a7cfd45fd0cbff8cb2c839e842c4020bd4bf5652d289175d365b1480f249a5d951d48b99fa99dbd682234dabdc0ccf31926c49c760bba63006385062</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">这玩意儿需要密码哦（日记专用密码）</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="你怎么能偷看人家日记呢！！" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="612a8a4b4635c43a97b9c87b20b938b502934a492ef628d9a62c5ba53d01d11c">19f5612b4aec4e64cf47f8017ba48570be1a3155829c0a2b9746aee7dc843b5dd03b3d58780605875a45e9c053b881238ad223b03db58ef949aafbdfda2b8a67582c868fbe4e5aa1271c7f5b1a09c8fa75673080f4a3127cd8e8d589186f861171abd26440ea6f59199e1574ec3c80d62844eda41f742cff9ae555b7fde7902537f5f384e3c496e0e4a0bf7c5261eff66fb124b4b8ababc6005ca6a8cd3c7695b6f37481999bc6a6a35597756d9b6734f272225e738084b95ff1ece16bc5c673c331b4f9ca6797ee4c49571caecb20f5817ea50f4939eae68f416a436acae349bcd039f232319c9134d8edb3c1743f604707c049a043c0f82c9f916628aaa3c24e30974dc6873b6e15e848407bafbf17863622ac589a74f56d14bfe079c40058b398e5c9d17e1150c206f427d58f29efcb9744561fc0f9f47ac1e3c59d8fc56b8df8298f746b00c9ac9157b088199b3d1a599db6266b257fd7cf39ac0524c72e58c004773ae060a718856c0128342ff111930f902455c0f5447cfad54f91cd9f4f415b7e407bdf721ccfb0ec1e50d0e58ae1611f172015e3c195e5e7a824d20a8151e87f1a7e586cf3f98247aad6547baf1b9aaae7a7f64bc4cc8df14ef2c28733948b74fd6db6c19e27db1937f9d2b8f95c1acfc4e34b8cb779a888c88ca8393369bbc80bd8deaccb55fba7ee195600a69a1cd73765d731a4f0a9432a15c4a6788d2d4cf50add7408b244df7c5d13c208d79cab6e9c27d90a6b234205af178867f7f940c7def0c8fb4ec6e7b5eb2885407cd42c7b89eb6c02370708498f7f20210f1738ba35419ebf5b0f3086804495d8325bfd9a886f9e0f0d4abd61c977570aaf177713fa206b1385b57766cfaa05376ee4c47f48e52fc2b5af153b6f4659af7fad8ad355e66ae67956ec6e3d9ef53d153dc46e17eff65944c4ae6dd88543cd8de9bfa2702778da0e3303994f555dafd9c71681d1ae791c39288bb278234058f95161e340398b133b4e3bea019752617c0c0a46cedbd7c6adae69ca87935091f9212e0731a67acb734805f6c9d7dffdcb8ed5cb320f095c18b9ad70ce2aabbc5b24217900814d289bae7b27b9876f1c384e965b82b49dd4befe0a5985a71632e2502498002cf003fe528b9b2c5d1c995059d34ddc41fc6d74cb20153c4ff935114c087ca178cf77c2827f908fa0fc21ec7bd15454f036f8eb912bbd669d0cf83fff3d6f018fa760c1e0e796d0dfe2f31ce9277a633d72a0849f12f9c61d6d8bc854dc3d5ab1d968ab3e723befe4f6ffc3cb381cd364291c9070a6bf448c62e789bf7606557357c20d31bc596c12c4a55b6139b1345178822128e6491ffb51d2f02140ead8463a952ec70bd4a9da336699162c6b2162513ff6f511b8f9d152d3bf227fdbcb301da7eeea85ce8508ebcf5f9bd08a5fec1def86b6acf3a6cd450d002df06675be974e5a1185039d760344a37e435482263a5f14c9edbe544aa05a42b5be2c33e074c5c9aa5a49d960a82b66910e76c60121ef97be67f48a33b7a1c595cf31cbb1bb6f44e45ef11e7ad26ac662dbd457460fb18aa1d5328f22db9af0a817a10e19c740d006267e1c8e086dd6a2519a6b6fe10bd9a9d425a737a4580164e37b983f0c7282d351a475a2f68fc4436747265a361c575aa26b56fc48745a9b0a732efe45d7e5a4d2d10ca7f6d9e3d20583b63853b3c5059a8b5ac57f538e058104e9b3b3ed55202a6d86150d7fc0fbae248492e587c76f5fbb0d700f449624d7bc4577c4df976cb67bcfe509c2ecf356f22927fb867555f3172b0110418934e1dc06daed74bedd5ddd93609dddc03bcb625969ba8bad474f82b19329ad4e71899b05af77d476972efd68dcc2e25df18fb37a15cd6af0503804fdfeaf36d43c24ab84be0f4cb6b97c18c5f27ba36631cc8057ed237ae6a8c522aec8e177a8baa1efedafd65b0c812e5d0c6437c713238fbd0dd20db0e77ca8120a2f1af2ae77fec9a8e1705bb4a6f4687406f48854378dc2d5f6d77fab795807bb25a831477699006eadebf55eccfc91db6c380692da29cef191a32229d501f063f640251f2f8f8f1852787a336d7e29ac042b6b5f5e37f147bc42aa6cfb173d8276c7f5f5086ecc1554245a0a3d28740377f698fa3482f472650d65ee690e079b55ed3abf83e71c615c83f8540de4e7de30ee5976ea6f68957e5cd015cb3c06848a7b8fcd7ec246823262772f3f4fb2e020ea3b0abfd9c2f6186be95b7e055cd0383dbcb943238d32de7c14388e793ea8e30bfadcb524f4f67a03411d7ed7eea3c84bed308da9a36861b6dbb988b753f8795e9c40eb986b4a39c09d1b1f2be6775dc66e8813a7e7c052aae4acb5356e38d6d192fdc94025585d093a1a55db85a1ebd6fed9e503981c28df2e21aa5b32fc2100295c7241ca5764e0476e1006ada4fcfab8c3d55916b55c124d9e83d7c12aa27b4313411d7dfb64c2799c2e782a672c2451aba9174cd36a91a93534f662fff00863f39084b0e57a6d63d04fe93cb906d6bff31c5434b9ccfc8931012191c17403c90d3d0443f521820e350aab571b79d02798395ab26960a243cd17f5811bf1f189ba74a6b26e36a99080cd51d7f39600886c1b4e1de188f2bfa6039668d44f0755e43779ed7cff374de68cd3c7b9ce97ef245a8ba7103be3cdff2d98623f38ef363b0a9fbd8385c29287d68d674f5a5102798a4173aa85d4e1f0c899a51d39445bc1ad0ce58fbb1a4147f9d48425e15a3cdab65df7f1c99d8fce1a17f51559e74c9c5a577bca25e7cc2cecb5add08d552f64a44a0bc10259774506b997fadbbac341947bc6593611ab2c8b6fc12b56f90561daca9cd435fe866d61af6dfbb611a9f49b4db8da2dc902a7eb37746b02c760af30a29363e0426cdf9e7bc7f37bce0e54b3a0b13feacb633607dfc304805d2b5f044d975fee0ea22ad85eced8ca77be1b0e081711140e148093590480cd02a5af4ed7a1d6dc289016cd2b0b44802185da98ddde06fbd3e4d0ff5a1c48dd327dd6f469fb851bbfeaf69e26f7d62cda6da7aaecf488235edc47f1b191f81ac078e24b2456e28ec217d12988957db130a0ae97fba59597eecfb74431bf17d5d59e74d113dd60a377da65d6d1ea05daf35beff77e5b06ef87fff7785fba2c6e7c426191ffcd8f5f4a68e3f275d0c8f53169cd0aabbe798937952a326d1af10bd76adefc8db522a0a08d24a80492f065ea22e3e74fc161cf2d8702d47f0f2896b1dd35c5e16ccbaceb02516783f5f36d7beec12a99ef9b3f780491da87d4e2c6c94ba2ceb0a4524b7497ff3442ab888304524aa35fb4e84244ef04d4299ffb4476ba75d99c493a8f6ef57302ef58e61842d659100a0383329c051d4238f413dd06e351833f995e74ef8107e2e856384204</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">这玩意儿需要密码哦（日记专用密码）</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       
       
       <categories>
@@ -21,6 +166,8 @@
         <tags>
             
             <tag> diary </tag>
+            
+            <tag> 迪士尼在逃公主 </tag>
             
         </tags>
       
@@ -58,7 +205,7 @@
       <link href="/2022/10/08/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%AC%AC%E4%B8%80%E8%8A%82/"/>
       <url>/2022/10/08/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%AC%AC%E4%B8%80%E8%8A%82/</url>
       
-        <content type="html"><![CDATA[<p>视频来源</p><p><a href="https://www.bilibili.com/video/BV1Wv411h7kN/?p=3&amp;spm_id_from=pageDriver&amp;vd_source=6eec2f14c9cf0fcea00a0d29ba245c79">第一节 2021 - (上) - 机器学习基本概念简介_哔哩哔哩_bilibili</a></p><p><img src="../../../images/image-20221008170111797.png" alt="image-20221008170111797"></p>]]></content>
+        <content type="html"><![CDATA[<p>视频来源</p><p><a href="https://www.bilibili.com/video/BV1Wv411h7kN/?p=3&spm_id_from=pageDriver&vd_source=6eec2f14c9cf0fcea00a0d29ba245c79">第一节 2021 - (上) - 机器学习基本概念简介_哔哩哔哩_bilibili</a></p><p><img src="/../../../images/image-20221008170111797.png" alt="image-20221008170111797"></p>]]></content>
       
       
       <categories>
@@ -559,7 +706,7 @@
       <link href="/2022/07/27/GNN%E5%AD%A6%E4%B9%A0/"/>
       <url>/2022/07/27/GNN%E5%AD%A6%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="你怎么能偷看人家日记呢！！" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="2a97514dae7dac0505ab8fa86ce6f12468bb3b88d6c09af389a531d6429a82ac">19f5612b4aec4e64cf47f8017ba485707016f234b68cd276006b8989d5d5dfee35f5e24873456c51b13079d91e1d625093e45049edd457193f1bbfc85363f99c00e161aba25ace2f75c7b97483241e3b45bba650521551b87fc9b2a675dd65b4c76e2c1bd1545d97c002f14e765dcd961c79aaf62f2d629cb400532419dc9f991c05ca5aa8e5752873d877a656ab28a77e3040b0c91d5b166358ac40b0ff397f9c4de5589172653a4e0a0f2be3397332ca64e95887a14a24df79f697cf2e3d3b29cb1d076b0d5f2a1c3e506540ce1e87648e0b95d000ad0999e530f36d743227caf7b148e5100c5b8efee83fe3747c9b00dd9009116c21f6ba51999d76a8c58cfb76b58f240c59c5f22b6eea99db35765f69da896715bb08627c1b831f03f16634c0bc567c9ec8dfd6a0112de73f02df7dbb11d161c1650ac87c166058cf8fd66fd5f031f8e866e3df73ff42150e983a465486ed2dad9f64f966d118359672b7fe92cb052fae02d7451d53ae5ba4b1602efb66f4b2613fd6fc868fc54f7f63daac90221228db834ef2eaa5f7423649b0a27d6dcbdaa894902afe1113521575e1bde7c271f9fa69527796ef99c8bef6efc7f86c25f81fba09eb52582f18083659c746b05d121a4d5756ea1149e99ff9b259c6712bc59424db51d80f0b0516afbb81b41a6caf768f1a5bddb297da96c5374c8e3d88f72ea650c037ba720aa2fec048b4b683d6f241d210fe343c56027d3f628c6991a8c1cc829284748506cce076</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">这玩意儿需要密码哦（日记专用密码）</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[<p>CNN主要用在CNN</p><p>RNN主要用在NLP（时间序列相关）</p><p>多带了个时间关系</p><p><img src="/../images/image-20220727090750660.png" alt="image-20220727090750660"></p><p>把前一层的结果保存下来带到下一层</p><p><img src="/../images/image-20220727092828100.png" alt="image-20220727092828100"></p><p><img src="/../images/image-20220727093011309.png" alt="image-20220727093011309"></p><p>$h_i$都只是一个中间结果，然后一般就用最后一个就行了</p>]]></content>
       
       
       <categories>
@@ -1627,7 +1774,7 @@
       <link href="/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
       <url>/2022/05/07/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E7%AC%AC%E4%BA%8C%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<ul><li><strong>数据集</strong>是<strong>数据对象</strong>的<strong>集合</strong></li><li><strong>属性</strong>是对象对的性质</li><li><strong>测量标度</strong>是将数值或符号与对象的属性相关联的<strong>规则</strong></li></ul><h2 id="属性的不同类型"><a href="#属性的不同类型" class="headerlink" title="属性的不同类型"></a>属性的不同类型</h2><p>取决于下列4种数值性质：<br>属性值（数值）的性质<br>1、Distinctness（相异性）:  &#x3D;  $\neq$<br>2、Order（序）:&lt;  &gt;  <br>3、Addition（加法）:  +  - <br>4、Multiplication （乘法） : * &#x2F;<br>属性的类型不同，允许的操作不同</p><p><img src="/../../images/image-20220506091611620.png" alt="image-20220506091611620"></p><p><img src="F:/博客/floder/source/images/image-20220506091533663.png" alt="image-20220506091533663"></p><ul><li><p>离散属性(Discrete Attribute)<br>有限或无限可数 (countable infinite )个值<br>例: 邮政编码, 计数, 文档集的词<br>常表示为<strong>整数变量</strong>.<br>注意: 二元属性(binary attributes)是离散属性的特例</p></li><li><p>连续属性(Continuous Attribute)<br>属性值为实数<br>例: 温度, 高度, 重量.<br>实践中, 实数只能用<strong>有限位数字的数度量和表示</strong>.<br>连续属性一般用<strong>浮点变量</strong>表示.  </p></li><li><p>非对称属性</p><p>只有出现非0值才是重要的</p><p>数据集中，非对称的属性值大多是0，只有少部分才会有非0值</p></li></ul><h2 id="数据集的类型"><a href="#数据集的类型" class="headerlink" title="数据集的类型"></a>数据集的类型</h2><ul><li>维度(Dimensionality)<br>数据集的维度是数据集中的对象具有的**属性数目 **<br>维度灾难（Curse of Dimensionality）<br>维度归约（dimensionality reduction） </li><li>稀疏性(Sparsity)<br>如具有<strong>非对称特征</strong>的数据集，一个对象的大部分属性上的值都为0 （非对称关心非零值）<br>只存储和处理非零值</li><li>分辨率(Resolution)<br> 数据的模式依赖于分辨率——<strong>度量尺度</strong>(scale)<br>在数米的分辨率下，地球表面看上去很不平坦，但在数十公里的分辨率下却相对平坦<br>小时标度下的气压变化反映风暴或其他天气系统的移动；在月标度下，这些现象就检测不到</li></ul><h3 id="数据集类型（三大类）"><a href="#数据集类型（三大类）" class="headerlink" title="数据集类型（三大类）"></a>数据集类型（三大类）</h3><ul><li>记录数据（<strong>用矩阵存储的数据</strong>）<br>数据矩阵（Data Matrix）<br>文本数据（Document Data ）：每篇文档可以表示成一个文档-词矩阵<br>事务数据（Transaction Data）</li><li>基于图(Graph)的数据（<strong>用图表示的数据</strong>）<br>World Wide Web<br>分子结构（Molecular Structures）</li><li>有序(Ordered)数据（<strong>就是按时间顺序等排序好的数据</strong>）<br>空间数据（Spatial Data）<br>时间数据（Temporal Data）<br>序列数据（Sequential Data ）</li></ul>]]></content>
+        <content type="html"><![CDATA[<ul><li><strong>数据集</strong>是<strong>数据对象</strong>的<strong>集合</strong></li><li><strong>属性</strong>是对象对的性质</li><li><strong>测量标度</strong>是将数值或符号与对象的属性相关联的<strong>规则</strong></li></ul><h2 id="属性的不同类型"><a href="#属性的不同类型" class="headerlink" title="属性的不同类型"></a>属性的不同类型</h2><p>取决于下列4种数值性质：<br>属性值（数值）的性质<br>1、Distinctness（相异性）:  &#x3D;  $\neq$<br>2、Order（序）:&lt;  &gt;  <br>3、Addition（加法）:  +  - <br>4、Multiplication （乘法） : * &#x2F;<br>属性的类型不同，允许的操作不同</p><p><img src="/../../images/image-20220506091611620.png" alt="image-20220506091611620"></p><p><img src="/../../images/image-20220506091533663.png" alt="image-20220506091533663"></p><ul><li><p>离散属性(Discrete Attribute)<br>有限或无限可数 (countable infinite )个值<br>例: 邮政编码, 计数, 文档集的词<br>常表示为<strong>整数变量</strong>.<br>注意: 二元属性(binary attributes)是离散属性的特例</p></li><li><p>连续属性(Continuous Attribute)<br>属性值为实数<br>例: 温度, 高度, 重量.<br>实践中, 实数只能用<strong>有限位数字的数度量和表示</strong>.<br>连续属性一般用<strong>浮点变量</strong>表示.  </p></li><li><p>非对称属性</p><p>只有出现非0值才是重要的</p><p>数据集中，非对称的属性值大多是0，只有少部分才会有非0值</p></li></ul><h2 id="数据集的类型"><a href="#数据集的类型" class="headerlink" title="数据集的类型"></a>数据集的类型</h2><ul><li>维度(Dimensionality)<br>数据集的维度是数据集中的对象具有的**属性数目 **<br>维度灾难（Curse of Dimensionality）<br>维度归约（dimensionality reduction） </li><li>稀疏性(Sparsity)<br>如具有<strong>非对称特征</strong>的数据集，一个对象的大部分属性上的值都为0 （非对称关心非零值）<br>只存储和处理非零值</li><li>分辨率(Resolution)<br> 数据的模式依赖于分辨率——<strong>度量尺度</strong>(scale)<br>在数米的分辨率下，地球表面看上去很不平坦，但在数十公里的分辨率下却相对平坦<br>小时标度下的气压变化反映风暴或其他天气系统的移动；在月标度下，这些现象就检测不到</li></ul><h3 id="数据集类型（三大类）"><a href="#数据集类型（三大类）" class="headerlink" title="数据集类型（三大类）"></a>数据集类型（三大类）</h3><ul><li>记录数据（<strong>用矩阵存储的数据</strong>）<br>数据矩阵（Data Matrix）<br>文本数据（Document Data ）：每篇文档可以表示成一个文档-词矩阵<br>事务数据（Transaction Data）</li><li>基于图(Graph)的数据（<strong>用图表示的数据</strong>）<br>World Wide Web<br>分子结构（Molecular Structures）</li><li>有序(Ordered)数据（<strong>就是按时间顺序等排序好的数据</strong>）<br>空间数据（Spatial Data）<br>时间数据（Temporal Data）<br>序列数据（Sequential Data ）</li></ul>]]></content>
       
       
       
