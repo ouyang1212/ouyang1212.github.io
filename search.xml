@@ -4,11 +4,147 @@
   
     
     <entry>
+      <title>反卷积</title>
+      <link href="/2022/11/24/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E7%9F%A5%E8%AF%86%E7%82%B9%E5%AD%A6%E4%B9%A0/%E8%BD%AC%E7%BD%AE%E5%8D%B7%E7%A7%AF%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+      <url>/2022/11/24/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E7%9F%A5%E8%AF%86%E7%82%B9%E5%AD%A6%E4%B9%A0/%E8%BD%AC%E7%BD%AE%E5%8D%B7%E7%A7%AF%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<p>前提：在李沐中运用到了转置卷积有些不太理解，因此来研究一下。</p><p><a href="https://zh-v2.d2l.ai/chapter_computer-vision/fcn.html">13.11. 全卷积网络 — 动手学深度学习 2.0.0-beta1 documentation (d2l.ai)</a></p><p>参考：</p><p><a href="https://zhuanlan.zhihu.com/p/115070523">转置卷积(Transpose Convolution) - 知乎 (zhihu.com)</a></p><p>计算公式推导，其实很简单，因为反卷积相当于是卷积的逆过程，因此只需要把公式逆推就行了</p><p>$$ o &#x3D; (i +2p-k)&#x2F;s+1$$</p><p>$$i&#x3D;(o+1)*s+k-2p$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+          <category> 目标检测 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 目标检测 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网站视频下载方法</title>
+      <link href="/2022/11/19/%E6%8A%80%E5%B7%A7/%E7%BD%91%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95/"/>
+      <url>/2022/11/19/%E6%8A%80%E5%B7%A7/%E7%BD%91%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>参考链接：</p><p>[(55 封私信 &#x2F; 80 条消息) 如何把网页视频下载到电脑上？ - 知乎 (zhihu.com)](<a href="https://www.zhihu.com/question/427720670#:~:text=%E5%A6%82%E4%BD%95%E6%8A%8A%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A%EF%BC%9F">https://www.zhihu.com/question/427720670#:~:text=如何把网页视频下载到电脑上？</a> 1 1、审查元素下载 2 2、硕鼠,3 3、插件工具-flash video downloader 4 4、迅捷屏幕录像工具-录制视频)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+          <category> 技巧 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+            <tag> 技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>吉他和弦</title>
+      <link href="/2022/11/19/%E7%94%9F%E6%B4%BB/%E5%90%89%E4%BB%96%E5%92%8C%E5%BC%A6/"/>
+      <url>/2022/11/19/%E7%94%9F%E6%B4%BB/%E5%90%89%E4%BB%96%E5%92%8C%E5%BC%A6/</url>
+      
+        <content type="html"><![CDATA[<p>参考链接：</p><p><a href="https://www.bilibili.com/video/BV1534y1v729/?spm_id_from=333.337.search-card.all.click&vd_source=6eec2f14c9cf0fcea00a0d29ba245c79">【超详细-入门必看防弯路】吉他如何正确按和弦 左手和弦基础姿势16种常用和弦具体按法练习 提高练琴效率 吉他和弦怎么按教学 吉他基本功正确爬格子手型姿势 进步快_哔哩哔哩_bilibili</a></p><h3 id="C和弦"><a href="#C和弦" class="headerlink" title="C和弦"></a>C和弦</h3><p><img src="/../../images/image-20221122170725324.png" alt="image-20221122170725324"></p><ul><li>食指中指靠在一起</li></ul><h3 id="Cmaj7"><a href="#Cmaj7" class="headerlink" title="Cmaj7"></a>Cmaj7</h3><p><img src="/../../images/image-20221122170759830.png" alt="image-20221122170759830"></p><ul><li>中指无名指靠在一起</li></ul><h3 id="Cadd9"><a href="#Cadd9" class="headerlink" title="Cadd9"></a>Cadd9</h3><p><img src="/../../images/image-20221122171158708.png" alt="image-20221122171158708"></p><ul><li>三手指靠在一起</li></ul><h3 id="Dm"><a href="#Dm" class="headerlink" title="Dm"></a>Dm</h3><p><img src="/../../images/image-20221122171434077.png" alt="image-20221122171434077"></p><ul><li>小指可换成无名指</li><li>三个靠在一起，食指可以不靠</li></ul><h3 id="D"><a href="#D" class="headerlink" title="D"></a>D</h3><p><img src="/../../images/image-20221122185900379.png" alt="image-20221122185900379"></p><p>三指靠在一起，如果食指指肚碰到了，立起来一点</p><h3 id="D7"><a href="#D7" class="headerlink" title="D7"></a>D7</h3><p><img src="/../../images/image-20221122190141720.png" alt="image-20221122190141720"></p><p>整个往左移，</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+          <category> 吉他 </category>
+          
+          <category> 和弦 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+            <tag> 吉他 </tag>
+            
+            <tag> 和弦 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>目标检测论文阅读</title>
+      <link href="/2022/11/19/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+      <url>/2022/11/19/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</url>
+      
+        <content type="html"><![CDATA[<p>参考文献：</p><p><a href="https://cloud.tencent.com/developer/article/1685055">入门分享 | 12篇深度学习目标检测必读论文 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p><p><a href="https://laptrinhx.com/10-papers-you-should-read-to-understand-image-classification-in-the-deep-learning-era-787400114/">10 Papers You Should Read to Understand Image Classification in the Deep Learning Era | LaptrinhX</a></p><p>阅读顺序：</p><h2 id="2013：OverFeat"><a href="#2013：OverFeat" class="headerlink" title="2013：OverFeat"></a><strong>2013：OverFeat</strong></h2><h2 id="OverFeat-使用卷积网络集成识别、定位和检测"><a href="#OverFeat-使用卷积网络集成识别、定位和检测" class="headerlink" title="OverFeat: 使用卷积网络集成识别、定位和检测"></a><strong>OverFeat: 使用卷积网络集成识别、定位和检测</strong></h2><p>OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks</p><h2 id="2013-R-CNN"><a href="#2013-R-CNN" class="headerlink" title="2013: R-CNN"></a><strong>2013: R-CNN</strong></h2><h2 id="基于区域卷积网络的精确目标检测和分割"><a href="#基于区域卷积网络的精确目标检测和分割" class="headerlink" title="基于区域卷积网络的精确目标检测和分割"></a><strong>基于区域卷积网络的精确目标检测和分割</strong></h2><p>Region-based Convolutional Networks for Accurate Object Detection and Segmentation</p><h2 id="2015-Fast-R-CNN"><a href="#2015-Fast-R-CNN" class="headerlink" title="2015: Fast R-CNN"></a><strong>2015: Fast R-CNN</strong></h2><h2 id="Fast-R-CNN"><a href="#Fast-R-CNN" class="headerlink" title="Fast R-CNN"></a><strong>Fast R-CNN</strong></h2><p>Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</p><h2 id="2015-YOLO-v1"><a href="#2015-YOLO-v1" class="headerlink" title="2015: YOLO v1"></a><strong>2015: YOLO v1</strong></h2><h2 id="你只看一次-统一，实时的目标检测"><a href="#你只看一次-统一，实时的目标检测" class="headerlink" title="你只看一次: 统一，实时的目标检测"></a><strong>你只看一次: 统一，实时的目标检测</strong></h2><p>You Only Look Once: Unified, Real-Time Object Detection</p><h2 id="2015-SSD"><a href="#2015-SSD" class="headerlink" title="2015: SSD"></a><strong>2015: SSD</strong></h2><h2 id="SSD-单发多框检测器"><a href="#SSD-单发多框检测器" class="headerlink" title="SSD: 单发多框检测器"></a><strong>SSD: 单发多框检测器</strong></h2><p>SSD: Single Shot MultiBox Detector</p><h2 id="2016-FPN"><a href="#2016-FPN" class="headerlink" title="2016: FPN"></a><strong>2016: FPN</strong></h2><h2 id="目标检测的特色金字塔网络"><a href="#目标检测的特色金字塔网络" class="headerlink" title="目标检测的特色金字塔网络"></a><strong>目标检测的特色金字塔网络</strong></h2><p>“Feature Pyramid Networks for Object Detection”</p><h2 id="2016-YOLO-v2"><a href="#2016-YOLO-v2" class="headerlink" title="2016: YOLO v2"></a><strong>2016: YOLO v2</strong></h2><h2 id="YOLO9000-更好，更快，更强"><a href="#YOLO9000-更好，更快，更强" class="headerlink" title="YOLO9000: 更好，更快，更强"></a><strong>YOLO9000: 更好，更快，更强</strong></h2><p>Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</p><h2 id="2017-RetinaNet"><a href="#2017-RetinaNet" class="headerlink" title="2017: RetinaNet"></a><strong>2017: RetinaNet</strong></h2><h2 id="针对密集目标检测的Focal-Loss"><a href="#针对密集目标检测的Focal-Loss" class="headerlink" title="针对密集目标检测的Focal Loss"></a><strong>针对密集目标检测的Focal Loss</strong></h2><p>Focal Loss for Dense Object Detection</p><h2 id="2018-YOLO-v3"><a href="#2018-YOLO-v3" class="headerlink" title="2018: YOLO v3"></a><strong>2018: YOLO v3</strong></h2><h2 id="YOLOv3-渐进式改进"><a href="#YOLOv3-渐进式改进" class="headerlink" title="YOLOv3: 渐进式改进"></a><strong>YOLOv3: 渐进式改进</strong></h2><p>Dive Really Deep into YOLO v3: A Beginner’s Guide</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+          <category> 目标检测 </category>
+          
+          <category> 论文 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 目标检测 </tag>
+            
+            <tag> 论文 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2022/11/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0/github/github%E6%9C%AC%E5%9C%B0%E5%AF%BC%E5%85%A5/"/>
       <url>/2022/11/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0/github/github%E6%9C%AC%E5%9C%B0%E5%AF%BC%E5%85%A5/</url>
       
-        <content type="html"><![CDATA[<p>参考来源：</p><p><a href="https://www.bilibili.com/video/BV1qp411R7md/?spm_id_from=333.337.search-card.all.click&vd_source=6eec2f14c9cf0fcea00a0d29ba245c79">【github】本地文件上传到github_哔哩哔哩_bilibili</a></p><p>git学习的网站</p><p><a href="https://www.liaoxuefeng.com/wiki/896043488029600/896202780297248">集中式vs分布式 - 廖雪峰的官方网站 (liaoxuefeng.com)</a></p><p>首先默认已经下载好git和github desktop</p><h1 id="本地建立自己的仓库并上传"><a href="#本地建立自己的仓库并上传" class="headerlink" title="本地建立自己的仓库并上传"></a>本地建立自己的仓库并上传</h1><p>打开github desktop，创建一个新的仓库</p><p><img src="/../../../images/image-20221117191919145.png" alt="image-20221117191919145"></p><p>然后输入信息，path就是本地仓库的位置。一般来说README也勾上。</p><p><img src="/../../../images/image-20221117192011620.png" alt="image-20221117192011620"></p><p>接下来找到对应创建的文件夹，加入想要放进去的文件，可以的话也修改一下readme。</p><p><img src="/../../../images/image-20221117192112859.png" alt="image-20221117192112859"></p><p>接下来输入一些信息，按commit就可以把本地的文件提交到本地的github desktop</p><p><img src="/../../../images/image-20221117192200360.png" alt="image-20221117192200360"></p><p>然后点击，提交</p><p><img src="/../../../images/image-20221117192253933.png" alt="image-20221117192253933"></p><h1 id="本地修改后更新"><a href="#本地修改后更新" class="headerlink" title="本地修改后更新"></a>本地修改后更新</h1><h2 id="在github-desktop修改"><a href="#在github-desktop修改" class="headerlink" title="在github desktop修改"></a>在github desktop修改</h2><p>在本地的文件修改完后，这里会显示changes，然后点击上面的fetch（如上图）即可。</p><p><img src="/../../../images/image-20221117192416802.png" alt="image-20221117192416802"></p><h2 id="用git修改"><a href="#用git修改" class="headerlink" title="用git修改"></a>用git修改</h2><p><a href="https://www.cnblogs.com/delav/p/11118555.html">git 更新本地代码 - 傲娇的草履虫 - 博客园 (cnblogs.com)</a></p><p>参考这篇blog，目前我还没实现，下次实现后过来修改。</p>]]></content>
+        <content type="html"><![CDATA[<p>参考来源：</p><p><a href="https://www.bilibili.com/video/BV1qp411R7md/?spm_id_from=333.337.search-card.all.click&vd_source=6eec2f14c9cf0fcea00a0d29ba245c79">【github】本地文件上传到github_哔哩哔哩_bilibili</a></p><p>git学习的网站</p><p><a href="https://www.liaoxuefeng.com/wiki/896043488029600/896202780297248">集中式vs分布式 - 廖雪峰的官方网站 (liaoxuefeng.com)</a></p><p>首先默认已经下载好git和github desktop</p><h1 id="本地建立自己的仓库并上传"><a href="#本地建立自己的仓库并上传" class="headerlink" title="本地建立自己的仓库并上传"></a>本地建立自己的仓库并上传</h1><p>打开github desktop，创建一个新的仓库</p><p><img src="/../../../images/image-20221117191919145.png" alt="image-20221117191919145"></p><p>然后输入信息，path就是本地仓库的位置。一般来说README也勾上。</p><p><img src="/../../../images/image-20221117192011620.png" alt="image-20221117192011620"></p><p>接下来找到对应创建的文件夹，加入想要放进去的文件，可以的话也修改一下readme。</p><p><img src="/../../../images/image-20221117192112859.png" alt="image-20221117192112859"></p><p>接下来输入一些信息，按commit就可以把本地的文件提交到本地的github desktop</p><p><img src="/../../../images/image-20221117192200360.png" alt="image-20221117192200360"></p><p>然后点击，提交</p><p><img src="/../../../images/image-20221117192253933.png" alt="image-20221117192253933"></p><h1 id="本地修改后更新"><a href="#本地修改后更新" class="headerlink" title="本地修改后更新"></a>本地修改后更新</h1><h2 id="在github-desktop修改"><a href="#在github-desktop修改" class="headerlink" title="在github desktop修改"></a>在github desktop修改</h2><p>在本地的文件修改完后，这里会显示changes，然后点击上面的fetch（如上图）即可。</p><p><img src="/../../../images/image-20221117192416802.png" alt="image-20221117192416802"></p><h2 id="用git修改"><a href="#用git修改" class="headerlink" title="用git修改"></a>用git修改</h2><p>具体参见这篇博客。</p><p><a href="https://zhuanlan.zhihu.com/p/407966596">如何使用git 把本地代码更新到GitHub上 - 知乎 (zhihu.com)</a></p>]]></content>
       
       
       <categories>
