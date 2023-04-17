@@ -4,6 +4,172 @@
   
     
     <entry>
+      <title>上海旅行规划</title>
+      <link href="/2023/04/16/%E6%97%85%E8%A1%8C/2023-04-16-%E4%B8%8A%E6%B5%B7%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92/"/>
+      <url>/2023/04/16/%E6%97%85%E8%A1%8C/2023-04-16-%E4%B8%8A%E6%B5%B7%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Day1："><a href="#Day1：" class="headerlink" title="Day1："></a>Day1：</h2><ul><li>南京路：主要是南京路步行街+外滩+东方明珠；外加渡轮+观光车+朵朵书店</li></ul><p>具体规划：</p><p>下午一点：汉庭酒店集合</p><p>下午两点半：豫园（城隍庙）</p><p>四点半：外滩，拍拍照，坐船</p><p>五点：陆家嘴（外滩观光隧道）</p><p>五点半：南京路步行街</p><p>六点半：饭店</p><p>八点半：朵朵书店、东方明珠</p><p>十点半回酒店（想从外滩走回去）<br><img src="F:\博客\floder\source\images\202304161924961.png" alt="image.png"></p><h2 id="Day2："><a href="#Day2：" class="headerlink" title="Day2："></a>Day2：</h2><p>武康路 一大会址（在黄埔附近） 豫园+城隍庙（下图也有挺近的）+ 世博园（在下面一点）</p><ul><li>早上随便吃点</li></ul><p>观光车 —— 一大会址（附近玩一玩）、上海新天地、复兴公园附近吃饭（附近也有很多玩的）</p><p>下午： 世博园</p><p>晚上：浦东新区<br><a href="https://zhuanlan.zhihu.com/p/385080188">沪上16个夜游好去处 - 知乎 (zhihu.com)</a></p><ul><li>船厂  浦东新区滨江大道1777号</li><li>还没搜到。。。可以去外滩再转转（不然马上放假了）</li></ul><p><img src="F:\博客\floder\source\images\202304161908267.png" alt="image.png"></p><h2 id="day-3"><a href="#day-3" class="headerlink" title="day 3"></a>day 3</h2><p>上午：上海博物馆</p><p>下午： 森林公园</p><p><img src="F:\博客\floder\source\images\202304161918034.png" alt="image.png"></p><h2 id="day4"><a href="#day4" class="headerlink" title="day4"></a>day4</h2><p>武康路<br>安福路<br>学校</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 旅游 </category>
+          
+          <category> 上海 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 旅游 </tag>
+            
+            <tag> 上海 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/02/13/%E6%8A%80%E5%B7%A7/%E4%BD%8F%E6%A0%A1%EF%BC%9A%E5%AE%BF%E8%88%8D%E6%B2%A1%E6%9C%89%E4%BA%86%E3%80%82/"/>
+      <url>/2023/02/13/%E6%8A%80%E5%B7%A7/%E4%BD%8F%E6%A0%A1%EF%BC%9A%E5%AE%BF%E8%88%8D%E6%B2%A1%E6%9C%89%E4%BA%86%E3%80%82/</url>
+      
+        <content type="html"><![CDATA[<p>住校：宿舍没有了。</p><p>师兄商量住哪，外面租房子。</p><p>培养处：程序</p><p>链接，申请进大门</p><p>师兄，联系住宿</p><p>几个文件</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于使用代理用于git</title>
+      <link href="/2023/02/03/%E6%8A%80%E5%B7%A7/2023-01-25-%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E7%94%A8%E4%BA%8Egit/"/>
+      <url>/2023/02/03/%E6%8A%80%E5%B7%A7/2023-01-25-%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E7%94%A8%E4%BA%8Egit/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.dazhuanlan.com/nan1999/topics/1485392">使用代理解决国内git clone速度慢的问题 ~ Unicorn’s blog · 大专栏 (dazhuanlan.com)</a></p><p>主要参考这个</p><p>因为我用的是clash for windows</p><p><img src="/../../images/image-20230203201419988.png" alt="image-20230203201419988"></p><p>它的端口在这里</p><p>输入以下内容</p><pre class="line-numbers language-none"><code class="language-none">git config --global http.proxy socks5:&#x2F;&#x2F;127.0.0.1:1080git config --global https.proxy socks5:&#x2F;&#x2F;127.0.0.1:1080<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>亲测有用！！</p><p>如果代理不可用，则需要关闭</p><pre class="line-numbers language-none"><code class="language-none">git config --global http.https:&#x2F;&#x2F;github.com.proxy socks5:&#x2F;&#x2F;127.0.0.1:1080git config --global https.https:&#x2F;&#x2F;github.com.proxy socks5:&#x2F;&#x2F;127.0.0.1:1080<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> obsidian </category>
+          
+          <category> git </category>
+          
+          <category> github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+            <tag> 技巧 </tag>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>zotero显示应用数量(不会更新)/IF/分区/应用</title>
+      <link href="/2023/02/03/%E6%8A%80%E5%B7%A7/2023-02-03-zotero%E6%98%BE%E7%A4%BA%E5%BA%94%E7%94%A8%E6%95%B0%E9%87%8F(%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0)/"/>
+      <url>/2023/02/03/%E6%8A%80%E5%B7%A7/2023-02-03-zotero%E6%98%BE%E7%A4%BA%E5%BA%94%E7%94%A8%E6%95%B0%E9%87%8F(%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0)/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/mandy0428/p/15604339.html">Zotero|如何查看文献被引用次数 - Mandy曼蒂 - 博客园 (cnblogs.com)</a></p><p>主要参考这个</p><p>使用方法：</p><p><img src="/../../images/image-20230204114922097.png" alt="image-20230204114922097"></p><p>下载文档–全选–勾选Get Semantic…–等待查找即可</p><p><a href="https://github.com/qnscholar/zotero-if">qnscholar&#x2F;zotero-if: 一款可以为 Zotero 文献更新【影响因子】的效率工具，不过远不止于此。An efficient tool for updating JCR IF for Zotero Items, and far more than that. (github.com)</a></p><p><img src="/../../images/image-20230208180504962.png" alt="image-20230208180504962"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技巧 </category>
+          
+          <category> 论文 </category>
+          
+          <category> zotero </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技巧 </tag>
+            
+            <tag> 论文 </tag>
+            
+            <tag> zotero </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>icloud for windows无法实时更新</title>
+      <link href="/2023/01/25/%E6%8A%80%E5%B7%A7/2022-12-25-icloud-for-windows%E6%97%A0%E6%B3%95%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0/"/>
+      <url>/2023/01/25/%E6%8A%80%E5%B7%A7/2022-12-25-icloud-for-windows%E6%97%A0%E6%B3%95%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/Coline1/p/16793434.html">icloud云盘无法同步解决办法 - Coline1 - 博客园 (cnblogs.com)</a></p><p>查了很久资料，把所有重启等方法都试了一遍还是没有作用，最后发现</p><p>原来是我开了代理（&#x2F;尴尬）。。。</p><p>关了，刷新一下就自动更新了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> obsidian </category>
+          
+          <category> 技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技巧 </tag>
+            
+            <tag> obsidian </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>20230106日常笔记</title>
+      <link href="/2023/01/06/%E6%97%A5%E5%B8%B8%E7%AC%94%E8%AE%B0/202301/20230106%E6%97%A5%E5%B8%B8%E7%AC%94%E8%AE%B0/"/>
+      <url>/2023/01/06/%E6%97%A5%E5%B8%B8%E7%AC%94%E8%AE%B0/202301/20230106%E6%97%A5%E5%B8%B8%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="常青藤学校"><a href="#常青藤学校" class="headerlink" title="常青藤学校"></a>常青藤学校</h2><p><a href="https://zhuanlan.zhihu.com/p/43648722">美国常青藤大学一览 - 知乎 (zhihu.com)</a></p><p>老常青藤：（Ivy League）</p><ul><li><p>宾夕法尼亚大学(University of Pennsylvania)</p></li><li><p>哈佛大学(Harvard U)</p></li><li><p>耶鲁大学(Yale U)</p></li><li><p>哥伦比亚大学(Columbia U)</p></li><li><p>普林斯顿大学(Princeton U)</p></li><li><p>布朗大学(Brown U)</p></li><li><p>康奈尔大学(Cornell U)</p></li><li><p>达特茅斯学院(Dartmouth College)</p></li></ul><h2 id="香港的几个大学"><a href="#香港的几个大学" class="headerlink" title="香港的几个大学"></a>香港的几个大学</h2><ul><li>香港大学</li><li>港科大</li><li>港中文</li><li>港城</li><li>香港理工</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常笔记 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 日常笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>西北大杂烩</title>
       <link href="/2023/01/05/%E6%97%85%E8%A1%8C/%E9%9D%92%E6%B5%B7/%E8%A5%BF%E5%8C%97%E5%A4%A7%E7%8E%AF%E6%B8%B8%E5%A4%A7%E6%9D%82%E7%83%A9/"/>
       <url>/2023/01/05/%E6%97%85%E8%A1%8C/%E9%9D%92%E6%B5%B7/%E8%A5%BF%E5%8C%97%E5%A4%A7%E7%8E%AF%E6%B8%B8%E5%A4%A7%E6%9D%82%E7%83%A9/</url>
